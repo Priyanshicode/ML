@@ -1,0 +1,122 @@
+#q9
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Define the functions
+def f1(x):
+    return x
+
+def f2(x):
+    return x**2
+
+def f3(x):
+    return (x**3)/100
+
+def f4(x):
+    return np.sin(x)
+
+def f5(x):
+    return np.sin(x)/x
+
+def f6(x):
+    return np.log(x)
+def f7(x):
+    return np.exp(x)
+
+
+x_values = np.arange(0.5, 100.5, 0.5)
+
+# Generate y values for each function
+y_f1 = f1(x_values)
+y_f2 = f2(x_values)
+y_f3 = f3(x_values)
+y_f4 = f4(x_values)
+y_f5 = f5(x_values)
+y_f6 = f6(x_values)
+y_f7 = f7(x_values)
+
+# Plot the functions
+plt.figure(figsize=(10, 6))
+
+plt.plot(x_values, y_f1, label='1) y=x')
+plt.plot(x_values, y_f2, label='2) y=x^2')
+plt.plot(x_values, y_f3, label='3) y=x^3/100')
+#plt.plot(x_values, y_f4, label='4) y=sin(x)')
+#plt.plot(x_values, y_f5, label='5) y=sin(x)/x')
+#plt.plot(x_values, y_f6, label='6) y=log(x)')
+#plt.plot(x_values, y_f7, label='7) y=e^x')
+
+
+# Add labels and title
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Plots of Different Functions')
+plt.legend()
+
+# Show the plot
+plt.grid(True)
+plt.show()
+
+#q10
+import numpy as np
+import pandas as pd
+
+# Generate a matrix of size 20x5 with random numbers between 1 and 2
+np.random.seed(42)  # Setting seed for reproducibility
+matrix_data = np.random.uniform(1, 2, size=(20, 5))
+
+# Create a Pandas DataFrame with named columns
+df = pd.DataFrame(matrix_data, columns=['a', 'b', 'c', 'd', 'e'])
+
+# Find the column with the highest standard deviation
+highest_std_column = df.std().idxmax()
+
+# Find the row with the lowest mean
+lowest_mean_row = df.mean(axis=1).idxmin()
+
+# Print the DataFrame
+print("DataFrame:")
+print(df)
+
+# Print the result
+print("\nColumn with highest standard deviation:", highest_std_column)
+print("Row with lowest mean:", lowest_mean_row)
+
+#q12
+import numpy as np
+
+# Example arrays
+arr_a = np.array([[1, 2, 3], [4, 5, 6]])
+scalar_b = 10
+
+# Broadcasting: Adding a scalar to a 2D array
+result = arr_a + scalar_b
+
+# Display the original array and the result
+print("Original Array:")
+print(arr_a)
+
+print("\nScalar Added using Broadcasting:")
+print(result)
+
+#q13
+import numpy as np
+
+def argmin(arr):
+    min_index = 0
+    for i in range(1, len(arr)):
+        if arr[i] < arr[min_index]:
+            min_index = i
+
+    return min_index
+    
+arr_test = np.array([5, 3, 8, 1, 7])
+result = argmin(arr_test)
+
+result_np = np.argmin(arr_test)
+
+print("Argmin result:", result)
+print("np.argmin result:", result_np)
+
+# Check if both results match
+assert result_custom == result_np, "Results do not match!"

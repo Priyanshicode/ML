@@ -1,3 +1,25 @@
+#q1
+The total number of multiplications will be n*k*m
+
+#q4 latex Document
+{
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\begin{document}
+
+\begin {center}
+Given , $z=x^{2}*y + y^{3}*sin(x)$\\
+$Grad(z) = < \frac{\partial {z}} {\partial {x}} , \frac{\partial {z}} {\partial {y}} >$
+\\
+$Grad(z) = < 2xy, 3y^{2}*sin(x) >$
+\end{center}
+
+\end{document}
+
+}
+
+
 #q9
 import matplotlib.pyplot as plt
 import numpy as np
